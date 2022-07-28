@@ -1,0 +1,21 @@
+<apex:page controller="CustomController">
+    <apex:form >
+        <apex:pageBlock title="Account, Contact & Opportunity Craete Page">
+            <apex:pageBlockSection title="Account Info">
+                <apex:inputText value="{!accName}" label="Account Name"/>
+                <apex:inputText value="{!accNumberOfEmployees}" label="Number Of Employees"/>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="Contact Info">
+                <apex:inputText value="{!conName}" label="Contact Name"/>
+                <apex:inputText value="{!conEmail}" label="Email"/>    
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="Opportunity Info">
+                <apex:inputText value="{!oppName}" label="Name"/>
+                <apex:inputText value="{!oppAmount}" label="Amount"/> 
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons >
+                <apex:commandButton action="{!saveTheRecord}" value="Save the record"/>
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+    </apex:form>>
+</apex:page>

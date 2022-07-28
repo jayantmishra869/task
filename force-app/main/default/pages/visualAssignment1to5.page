@@ -1,0 +1,28 @@
+<apex:page standardController="Account" sidebar="false">
+    <apex:pageBlock >
+        <apex:pageBlockSection columns="2" title="Basic Details">
+            <apex:outputField value="{!Account.Name}"/>
+            <apex:outputField value="{!Account.Rating}"/>
+            <apex:outputField value="{!Account.AccountNumber}"/>
+            <apex:outputField value="{!Account.Type}"/>
+            <apex:outputField value="{!Account.Industry}"/>
+            <apex:outputField value="{!Account.AnnualRevenue}"/>
+        </apex:pageBlockSection>
+        
+        <apex:pageBlockSection title="contact" >
+            
+            <apex:outputField value="{!Account.Phone}"/>
+            <apex:outputField value="{!Account.Sic}"/>
+        </apex:pageBlockSection>
+        
+        <apex:pageBlockSection title="Other Details" collapsible="false">
+            
+            <apex:outputField value="{!Account.AccountSource}"/>
+            <apex:outputField value="{!Account.Site}"/>
+            <apex:outputField value="{!Account.LastModifiedById}"/>
+            
+            
+        </apex:pageBlockSection>
+        
+    </apex:pageBlock>
+</apex:page>

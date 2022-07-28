@@ -1,0 +1,26 @@
+<template>
+    <lightning-card>
+        <lightning-button label="search Accounts" onclick={button}></lightning-button>
+        <template if:true={accounts}>
+            <template for:each={accounts} for:item="acc">
+                <lightning-layout key={acc.Id}>
+                    <lightning-layout-item>
+                        {acc.Name}
+                    </lightning-layout-item>
+                </lightning-layout>
+            </template>
+        </template>
+    </lightning-card>
+    <lightning-card>
+        <lightning-button label="search Contacts" onclick={button1}></lightning-button>
+        <template if:true={contacts}>
+            <template for:each={contacts} for:item="con">
+                <lightning-layout key={con.Id}>
+                    <lightning-layout-item>
+                        {con.LastName}
+                    </lightning-layout-item>
+                </lightning-layout>
+            </template>
+        </template>
+    </lightning-card>
+</template>

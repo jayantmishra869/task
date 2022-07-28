@@ -1,0 +1,34 @@
+<template>
+    <template if:false={visible}>
+        <lightning-card title="DATA" icon-name="utility:user">
+
+            <div class="slds-var-m-around_medium">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>
+                                Name
+                            </th>
+                            <th>
+                                Img
+                            </th>
+                        </tr>
+                        <template for:each={data} for:item="stu">
+                            <tr key={stu.Id}>
+                                <td>{stu.Name}</td>
+                                <td>
+                                    <img src={stu.imgUrl__c} style="height: 190px;width:100%">
+                                </td>
+                            </tr>
+                        </template>
+                    </thead>
+                </table>
+            </div>
+            <lightning-button label="upload" type="submit" onclick={call}></lightning-button>
+        </lightning-card>
+    </template>
+    <template if:true={visible}>
+        <lightning-record-form object-api-name={objectName} fields={fieldName}></lightning-record-form>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+</template>

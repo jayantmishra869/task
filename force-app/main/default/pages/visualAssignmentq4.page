@@ -1,0 +1,23 @@
+<apex:page id="thePage" controller="visualforceInfo">
+    <apex:tabPanel switchType="client" selectedTab="name2" id="theTabPanel">
+        <!-- Tab 1 -->
+        <apex:tab label="One" disabled="{!userid!=true}" name="name1" id="tabOne">
+            <apex:page >
+                <b>Hey System Administrator,</b>
+                <br/>
+                <br/>
+                How Are You.....
+            </apex:page>
+        </apex:tab>
+        <!-- Tab 2 -->
+        <apex:tab label="Two" disabled="{!userid==true}" name="name2" id="tabTwo">
+            <apex:page >
+                <b>Hey Non-System Administrator,</b>
+                <br/>
+                <br/>
+                How Are You.....
+            </apex:page>
+        </apex:tab>
+        
+    </apex:tabPanel>
+</apex:page>

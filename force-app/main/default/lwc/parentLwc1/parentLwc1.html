@@ -1,0 +1,7 @@
+<template>
+    <lightning-card title="Parent to child" style="padding: 10px">
+        <lightning-input type="number" label="Enter Value" value={startcounter} onchange={handlestartchange}></lightning-input>
+        <lightning-button label="Add" onclick={handlecounter}></lightning-button>
+        <c-child-lwc1 counter={startcounter}></c-child-lwc1>
+    </lightning-card>
+</template>

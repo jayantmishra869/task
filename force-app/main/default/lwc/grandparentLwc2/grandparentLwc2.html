@@ -1,0 +1,6 @@
+<template>
+    <lightning-card title="grandparents">{countValue} / 3
+        <lightning-button label="refresh" onclick={handlegrandrefresh}></lightning-button>
+    </lightning-card>
+    <c-parent-lwc2 ongrandparent={handlegrand} ongrandrefresh={handlegrandrefresh}></c-parent-lwc2>
+</template>

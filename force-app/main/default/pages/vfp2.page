@@ -1,0 +1,13 @@
+<apex:page standardController="Patient__c">
+    <apex:pageblock title="Hospital">
+        <apex:pageblockSection columns="2" title="Patient Basic Info">
+        	<apex:outputField value="{!Patient__c.Name}"/>
+        	<apex:outputField value="{!Patient__c.Age__c}"/>
+            <apex:outputField Value="{!Patient__c.Date_of_Birth__c}"/>
+            <apex:outputField Value="{!Patient__c.Type_of_Ward_Room__c}"/>
+        </apex:pageblockSection>
+        <apex:pageblockSection columns="1" title="Big Data">
+            <apex:outputField value="{!Patient__c.Description__c}"/>
+        </apex:pageblockSection>  
+    </apex:pageblock>
+</apex:page>

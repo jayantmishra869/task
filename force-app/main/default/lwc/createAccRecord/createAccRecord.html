@@ -1,0 +1,30 @@
+<template>
+    <lightning-card title="Create Record">
+
+        <lightning-record-edit-form object-api-name={ObjectApiName} onsuccess={handlesuccess} density="Compact">
+
+            <lightning-input-field field-name="Id" value={AccId}></lightning-input-field>
+
+            <lightning-input-field field-name={namefield} ></lightning-input-field>
+
+            <lightning-button label="Submit" variant="brand" type="submit"></lightning-button>
+        </lightning-record-edit-form>
+
+        <lightning-combobox
+            label="Account records"
+            value={value}
+            placeholder="Select Account"
+            options={options}
+            onchange={handlechange}>
+        </lightning-combobox>
+        <p>AccountID= {value}</p>
+
+        <lightning-record-form
+            object-api-name={ObjectApiName}
+            fields={fields}
+            columns="2"
+            mode="edit"
+            record-id={value}>
+        </lightning-record-form>
+    </lightning-card>
+</template>

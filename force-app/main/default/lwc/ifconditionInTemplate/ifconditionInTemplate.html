@@ -1,0 +1,8 @@
+<template>
+    <lightning-card label="ifCondition" style="padding: 10px">
+        <lightning-button label={dynamiclabel} style="padding: 10px" onclick={handlechange}></lightning-button>
+    </lightning-card>
+    <template if:true={card}>
+        <lightning-card>{myvalue}</lightning-card>
+    </template>
+</template>

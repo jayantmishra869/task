@@ -1,0 +1,26 @@
+<template>
+    <lightning-card title="Quizzz Time">
+       hi
+              <div class="slds-m-around_medium">
+                <strong> hello {data.Question__c}</strong>
+            </div>
+            <div class="slds-col">
+                <input type="radio" value="a" />
+                {data.a__c}
+            </div>
+            <div class="slds-col">
+                <input type="radio" value="b" />
+                {data.b__c}
+            </div>
+            <div class="slds-col">
+                <input type="radio" value="c" />
+                {data.c__c}
+            </div> 
+            <div class="slds-grid slds-grid_align-center">
+                <lightning-button label="Next" onclick={next}></lightning-button>
+                <lightning-button label="Previous" onclick={previous}></lightning-button>
+
+            </div> 
+
+    </lightning-card>
+</template>

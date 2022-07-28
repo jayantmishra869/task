@@ -1,0 +1,12 @@
+<template>
+    <lightning-card title="Parent">
+    </lightning-card>
+    <template if:true={visible}>
+        <lightning-card>you can unclick</lightning-card>
+    </template>
+    <template if:false={visible}>
+        <lightning-card>you can click</lightning-card>
+    </template>
+    
+    <c-child-lwc2 onbutton1={handleIncrease} onrefresh1={parenthandlerefresh} onclickk={show} onunclick={hide}></c-child-lwc2>
+</template>

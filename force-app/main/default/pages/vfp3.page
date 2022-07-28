@@ -1,0 +1,15 @@
+<apex:page standardController="Account">
+    <apex:form >
+        <apex:pageblock title="Account Create page & Edit">
+            <apex:pageBlockSection >
+                <apex:inputField value="{!Account.Name}"/>
+                <apex:inputField value="{!Account.NumberOfEmployees}"/>
+                <apex:inputField value="{!Account.Rating}"/>
+                <apex:inputField value="{!Account.Type}"/>
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons >
+                <apex:commandButton action="{!Save}" Value="Save the Record"/>
+            </apex:pageBlockButtons>
+        </apex:pageblock>
+    </apex:form>   
+</apex:page>

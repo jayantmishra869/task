@@ -1,0 +1,25 @@
+<apex:page controller="pickClass">
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pagemessages />
+            <apex:pageBlockSection >
+                <apex:outputLabel value="Object Names :"/>
+                <apex:selectList value="{!selectedObject}" size="1">
+                    <apex:selectOption itemLabel="--None--" itemValue="--None--"/>
+                    <apex:selectOptions value="{!objectNames}"/>
+                </apex:selectList>
+            </apex:pageBlockSection>
+            <apex:pageblockButtons >
+                <apex:commandButton value="Fetch Records" action="{!fetchFields}" reRender="flds"/>
+            </apex:pageblockButtons>
+        </apex:pageBlock>
+        <apex:pageblock id="flds" title="Last 5 Records">
+            <apex:pagemessages />
+            <apex:pageblockTable value="{!objFields}" var="fd">
+                <apex:repeat value="{!result}" var="res">
+                    <apex:column value="{!fd[res]}" />
+                </apex:repeat>
+            </apex:pageblockTable>
+        </apex:pageblock>    
+    </apex:form>
+</apex:page>

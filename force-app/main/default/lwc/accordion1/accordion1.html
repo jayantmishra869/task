@@ -1,0 +1,30 @@
+<template>
+    <lightning-card title="Accounts">
+        <lightning-layout>
+            <lightning-layout-item>
+                <lightning-accordion allow-multiple-sections-open={multi}>
+                    <template if:true={accData}>
+                        <template for:each={accData} for:item="acc">
+                            <lightning-accordion-section key={acc.Id} label={acc.Name}>
+                                <lightning-button label="delete" onclick={deletefun} value={acc.Id} ></lightning-button>
+                                <lightning-accordion-section label="Contact">
+                                    <template for:each={acc.Contacts} for:item="con">
+                                        <lightning-accordion-section key={con.Id} class="con"
+                                            label={con.LastName}></lightning-accordion-section> 
+                                        <lightning-button key={con.Id} onclick={deletecon} value={con.Id}></lightning-button>
+                                    </template>
+                                </lightning-accordion-section>
+                                <lightning-accordion-section label="Opportunity">
+                                    <template for:each={acc.Opportunities} for:item="opp">
+                                        <lightning-accordion-section key={opp.Id} class="opp" label={opp.Name}>
+                                        </lightning-accordion-section>
+                                    </template>
+                                </lightning-accordion-section>
+                            </lightning-accordion-section>
+                        </template>
+                    </template>
+                </lightning-accordion>
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+</template>

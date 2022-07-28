@@ -1,0 +1,12 @@
+<apex:page controller="QuickBookfroBillPayment">
+    <!-- Pass parameters from visualforce page to controller -->
+    <apex:form >
+            <apex:pageblock >
+                  Input your query <apex:inputText value="{!myInputQueryString}"/>
+                 <apex:commandButton value="Submit" reRender="DisplayInputQueryID" action="{!myInputQuery}"/>
+            </apex:pageblock>
+            <apex:pageblock >
+                 <b>Output : </b><apex:outputText value="{!myoutputString}" id="DisplayInputQueryID"/>
+            </apex:pageblock>
+    </apex:form>
+</apex:page>

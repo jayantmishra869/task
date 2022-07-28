@@ -1,0 +1,6 @@
+<template>
+    <lightning-card>
+        <p  style="padding: 25px"> COUNT: {countValue}</p>
+    </lightning-card>
+    <c-child-lwc onsubstract={handleDecrement} onadd={handleIncrement} onmultiply={handleMultiply} onclear={clearnow}></c-child-lwc>
+</template>

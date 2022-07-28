@@ -1,0 +1,20 @@
+<template>
+    <lightning-card>
+        <lightning-accordion allow-multiple-sections-open={multi}>
+            <template if:true={Accdata}>
+                <template for:each={Accdata} for:item="acc">
+                    <lightning-button label="AccountDelete" key={acc.Id} value={acc.Id} icon-position="right"
+                        icon-name="utility:delete" onclick={deleteAcc}></lightning-button>
+                    <lightning-accordion-section name={acc.Name} key={acc.Id} label={acc.Name}>
+                        <template for:each={acc.Contacts} for:item="con">
+                            <lightning-button label="ContactDelete" key={con.Id} value={con.Id} icon-position="right"
+                                icon-name="utility:delete" onclick={deletecon}></lightning-button>
+                            <lightning-accordion-section label={con.LastName} key={con.Id}>
+                            </lightning-accordion-section>
+                        </template>
+                    </lightning-accordion-section>
+                </template>
+            </template>
+        </lightning-accordion>
+    </lightning-card>
+</template>

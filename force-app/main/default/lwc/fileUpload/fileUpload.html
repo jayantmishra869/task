@@ -1,0 +1,30 @@
+<template>
+    <p>File Upload</p>
+    
+        <div style="height: 300px;">
+            <lightning-datatable
+                    key-field="id"
+                    data={Account}
+                    columns={columns}
+                    onrowaction={UploadAction}>
+            </lightning-datatable>
+        </div>
+
+        <lightning-file-upload
+            label="File Upload"
+            name="fileUploader"
+            accept={acceptedFormats}
+            record-id={RecordId}
+            onuploadfinished={handleUploadFinished}
+            multiple>
+        </lightning-file-upload>
+    <lightning-card>
+        <template if:false={visibel}>
+            <lightning-datatable
+                    key-field="id"
+                    data={doc}
+                    columns={data}>
+            </lightning-datatable>
+        </template>
+    </lightning-card>
+</template>

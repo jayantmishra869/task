@@ -1,0 +1,62 @@
+<template>
+    <lightning-card>
+
+        <lightning-input class="input1" label="Enter Object Name" placeholder="Enter Object"></lightning-input>
+        <lightning-button label="search" onclick={objValue}></lightning-button>
+    </lightning-card>
+    <lightning-card>
+        <lightning-layout>
+            <lightning-layout-item>
+                <lightning-accordion>
+                    <template if:true={objName}>
+                        <template if:true={Acc}>
+                            <lightning-record-form object-api-name={objName} fields={field}>
+                            </lightning-record-form>
+                        </template>
+                        <template if:true={Opp}>
+                            <lightning-record-form object-api-name={objName} fields={fieldOpp}>
+                            </lightning-record-form>
+                        </template>
+
+
+
+                        <template if:true={con}>
+                            <lightning-record-form object-api-name={objName} fields={fieldCon}>
+                            </lightning-record-form>
+                            <template for:each={data} for:item="d">
+                                <lightning-accordion-section key={d.Id} name={d.Id} label={d.LastName}>
+                                    <lightning-button-menu slot="actions" alternative-text="Show menu" icon-size="x-large"
+                                        menu-alignment="right" style="margin-left: 60vh;">
+                                        <lightning-menu-item label="Edit" onclick={editValue}></lightning-menu-item>
+                                        <template if:true={editVal}>
+                                            <lightning-record-form record-id={d.Id} object-api-name={objName} columns="4" mode="edit"
+                                                layout-type="Compact">
+                                            </lightning-record-form>
+                                        </template>
+                                    </lightning-button-menu>
+                                </lightning-accordion-section>
+                            </template>
+                        </template>
+
+
+
+                        <template for:each={data} for:item="d">
+                            <lightning-accordion-section key={d.Id} name={d.Id} label={d.Name}>
+                                <lightning-button-menu slot="actions" alternative-text="Show menu" icon-size="x-small"
+                                    menu-alignment="right" style="margin-left: 60vh;">
+                                    <lightning-menu-item label="Edit" onclick={editValue}></lightning-menu-item>
+                                    <template if:true={editVal}>
+                                        <lightning-record-form record-id={d.Id} object-api-name={objName} columns="2" mode="edit"
+                                            layout-type="Compact">
+                                        </lightning-record-form>
+                                    </template>
+                                </lightning-button-menu>
+                            </lightning-accordion-section>
+                            
+                        </template>
+                    </template>
+                </lightning-accordion>
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+</template>

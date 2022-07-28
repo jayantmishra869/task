@@ -1,0 +1,9 @@
+<apex:page controller="javaScriptGetData">
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockButtons location="bottom">
+                <apex:commandButton value="subscribe" action="{!jsgetData}"/>
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>
